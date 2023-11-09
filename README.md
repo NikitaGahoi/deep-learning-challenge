@@ -38,4 +38,9 @@ The nonprofit foundation, Alphabet Soup, sought to enhance its funding selection
 -Accuracy: 72.69%
 -Loss: 56.21%
 
+**Conclusion:** Despite multiple attempts, and increasing the nodes and layers, the target predictive accuracy of 75% was not reached. Therefore, I looked into the feature importance to reduce the dimension of the X-variable, by removing the least important features from the data. To achieve this objective, two approches were used "correlation_matrix" and "random forest model" to calculate feature importance.
+
+## Analyzing Important Features:
+After 
+
 
