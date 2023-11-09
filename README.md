@@ -13,41 +13,29 @@ The nonprofit foundation, Alphabet Soup, sought to enhance its funding selection
    This resulted in a data that included 43 feature variables 
  - **STEP 5 :** Split the preprocessed data into training and test set using "train_test_split" from sklearn module
 
-## COMPILING, TRAINING, AND EVALUATING THE MODEL:
-**ATTEMPT 1**
-The first attempt (Models/AlphabetSoupCharity1.h5) resulted in an accuracy score of 72.6%. This means that 72.6% of the model’s predicted values align with the dataset’s true values.
+## Compiling, Training, And Evaluating Models:
+**ATTEMPT 1**: For the first attempt (HDF5_Files/AlphabetSoupCharity.h5), hyperparameters used were:
 
-The hyperparameters used were:
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/bedc73a9-113e-4991-be82-31e5d4c61fda)
 
-layers = 2
-layer 1 = 80 neurons : activation function = "relu"
-layer2 = 30 neurons : activation function = "tanh"
-epochs = 100
-![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/37e1add1-4060-4723-a0e6-76fae886cfd1)
+**Model 1 Evaluation using test data:**
+-Accuracy: 72.61%
+-Loss: 55.84%
 
-Model 1 Evaluation using test data:
-Accuracy: 72.61%
-Loss: 55.84%
+**ATTEMPT 2:** For the second attempt (HDF5_Files/AlphabetSoupCharity_nn_2.h5), hyperparameters used were:
 
-**ATTEMPT 2**
-The first attempt (Models/AlphabetSoupCharity1.h5) resulted in an accuracy score of 72.8%. This was the highest accuracy score of the three models. This means that 72.8% of the model’s predicted values align with the dataset’s true values.
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/5b1fef12-8314-46f6-b0ff-fd3c0a6ecf04)
 
-The hyperparameters used were:
-layers = 2
-layer1 = 9 neurons : activation function = ‘relu’
-layer2 = 18 neurons : activation function = ‘relu'
-epochs = 100
+**Model 2 Evaluation using test data:**
+-Accuracy: 72.78%
+-Loss: 56.70%
 
+**ATTEMPT 3:** For the second attempt (HDF5_Files/AlphabetSoupCharity_nn_3.h5), hyperparameters used were:
 
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/d872867f-5f0a-4244-9382-2bd462455e4b)
 
-**ATTEMPT 3**
-The first attempt (Models/AlphabetSoupCharity1.h5) resulted in an accuracy score of 72.8%. This was the highest accuracy score of the three models. This means that 72.8% of the model’s predicted values align with the dataset’s true values.
+**Model 3 Evaluation using test data:**
+-Accuracy: 72.69%
+-Loss: 56.21%
 
-The hyperparameters used were:
-
-layers = 2
-layer1 = 9 neurons : activation function = ‘relu’
-layer2 = 18 neurons : activation function = ‘relu'
-epochs = 100
-Model 1 Accuracy Plot
 
