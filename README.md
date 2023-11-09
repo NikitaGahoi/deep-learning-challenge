@@ -41,6 +41,11 @@ The nonprofit foundation, Alphabet Soup, sought to enhance its funding selection
 **Conclusion:** Despite multiple attempts, and increasing the nodes and layers, the target predictive accuracy of 75% was not reached. Therefore, I looked into the feature importance to reduce the dimension of the X-variable, by removing the least important features from the data. To achieve this objective, two approches were used "correlation_matrix" and "random forest model" to calculate feature importance.
 
 ## Analyzing Important Features:
-After 
+After pre-processing the data, correlation matrix and Random forest was performed to look for important features and to remove the less important features that are not adding any value to the model
+
+### Correlation Matrix: 
+The correlation matrix was calculated for the dataset application_dummies. This matrix represents the pairwise correlations between different features. It is then visualized as a heatmap using the seaborn library.
+
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/2fa40605-be9b-47ee-87e7-d61320377aba)
 
 
