@@ -72,6 +72,7 @@ Since the values in ASK_AMT has a very huge range, logarithmic tranformation and
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/16a683ff-4592-4b4d-8467-7958cab96551)
 
 Log_bins were created on the log-tansformed data, and the bin were assigned to the corresponding values in the original dataframe. Given below is the value_counts for each bin:
+
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/6bb223ed-b099-4240-ab12-8285c2276bbc)
 
 
