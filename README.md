@@ -62,6 +62,15 @@ Random Forests in sklearn automatically calculates **feature importance**. All t
 
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/fc93affa-cda8-4e9a-bd9a-dfc6065de0cb)
 
+### More Step in Data Pre-processing:
+The column "ASK_AMT" had a 8747 unique values ranging from 5000 to 8597806340. To look for distribution/frequency of these 8747 values, value_counts()function was applied. the data turned out be extremely skewed, with 5000 having a unique count of 25398
+
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/b5b9c1c6-6350-4c7d-adca-71d3b56a2d9e)
+
+Since the values in ASK_AMT has a very huge range, logarithmic tranformation and binning was performed. A histogram was plotted to have a visual representation of values in ASK_AMT
+
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/16a683ff-4592-4b4d-8467-7958cab96551)
+
 
 
 
