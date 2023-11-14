@@ -125,7 +125,33 @@ tuner = kt.Hyperband(
     hyperband_iterations=2)
 ```
 Execute the Keras Tuner search by calling the `tuner.search` method, providing the training data (X_train_scaled and y_train), the number of epochs, and validation data (X_test_scaled and y_test) using the code `tuner.search(X_train_scaled,y_train,epochs=30,validation_data=(X_test_scaled,y_test))`
+
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/1cca43bc-b762-4aaf-b975-54395e211119) 
+
+Retrieve Top 3 Model Hyperparameters using tuner.get_best_hyperparameters(3) and print their values:
+
+{'activation': 'relu', 'first_units': 21, 'num_layers': 4, 'units_0': 16, 'units_1': 11, 'units_2': 16, 'units_3': 1, 'units_4': 16, 'units_5': 16, 
+'tuner/epochs': 10, 'tuner/initial_epoch': 4, 'tuner/bracket': 2, 'tuner/round': 1, 'tuner/trial_id': '0144'}
+
+{'activation': 'relu', 'first_units': 21, 'num_layers': 4, 'units_0': 16, 'units_1': 11, 'units_2': 16, 'units_3': 1, 'units_4': 16, 'units_5': 16, 
+'tuner/epochs': 30, 'tuner/initial_epoch': 10, 'tuner/bracket': 2, 'tuner/round': 2, 'tuner/trial_id': '0151'}
+
+{'activation': 'relu', 'first_units': 6, 'num_layers': 3, 'units_0': 11, 'units_1': 11, 'units_2': 16, 'units_3': 16, 'units_4': 26, 'units_5': 16, 
+'tuner/epochs': 30, 'tuner/initial_epoch': 10, 'tuner/bracket': 1, 'tuner/round': 1, 'tuner/trial_id': '0071'}
+
+Retrieve the top 3 models using tuner.get_best_models(3) and evaluate each model against the test dataset, printing the loss and accuracy.
+
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/dd013ae2-7eb0-4aa1-bae4-2f0dde1abd1e)
+
+## Conclusion
+ - Despite several attempts, the target predictive accuracy of 75% was not attained.
+ - Hyperparameter tuning did not significantly improve performance.
+ - Best accuracy achieved: 73.38%.
+ - Even the Random Forest could predict the data with 71% accuracy.
+ - Feature elimination or scaling resulted in a very minimal improvemnet in the accuracy
+ - 
+
+
 
 
 
