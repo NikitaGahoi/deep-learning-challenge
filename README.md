@@ -78,8 +78,54 @@ Random Forests in sklearn automatically calculates **feature importance**. All t
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/263fb09f-56ca-4715-a679-c9ff315894cf)
 
 ## Compiling, Training, And Evaluating Models:
-After indentifying the important features, the least important features( `INCOME_AMT`, `STATUS` and `SPECIAL_CONSIDERATION`) were removed from the dataset and the data was preprocessed using 
+After indentifying the important features, the least important features( `INCOME_AMT`, `STATUS` and `SPECIAL_CONSIDERATION`) were removed from the dataset, this reduced the dimension of dataste from 43 columns to 31 columns. Log-tranformed values were used for `ASK_AMT` feature, and the data was preprocessed as described in **Data Preprocessing** section. 
 
+To perform the hyperparameter tuning `keras-tuner` was installed. A method was created that generates a new Sequential model with hyperparameter options. This method is defined as create_model and uses Keras Tuner to allow the tuner to decide on activation functions, the number of neurons in the first layer, and the number of hidden layers with neurons. Given below are the parameters that were defined:
+
+```python
+# Create a method that creates a new Sequential model with hyperparameter options
+def create_model(hp):
+    nn_model = tf.keras.models.Sequential()
+
+    # Allow kerastuner to decide which activation function to use in hidden layers
+    activation = hp.Choice('activation',['relu','tanh','sigmoid'])
+
+    # Allow kerastuner to decide number of neurons in first layer
+    nn_model.add(tf.keras.layers.Dense(units=hp.Int('first_units',
+        min_value=1,
+        max_value=30,
+        step=5), activation=activation, input_dim=31))
+
+    # Allow kerastuner to decide number of hidden layers and neurons in hidden layers
+    for i in range(hp.Int('num_layers', 1, 6)):
+        nn_model.add(tf.keras.layers.Dense(units=hp.Int('units_' + str(i),
+            min_value=1,
+            max_value=30,
+            step=5),
+            activation=activation))
+
+    nn_model.add(tf.keras.layers.Dense(units=1, activation="sigmoid"))
+
+    # Compile the model
+    nn_model.compile(loss="binary_crossentropy", optimizer='adam', metrics=["accuracy"])
+
+    return nn_model
+```
+
+Keras Tuner library was imported to utilize its functionalities for hyperparameter tuning. A Hyperband tuner instance (kt.Hyperband) was created and features like model creation method, the optimization objective, the maximum number of epochs, and the number of hyperband iterations were specified.
+
+```python
+# Import the kerastuner library
+import keras_tuner as kt
+
+tuner = kt.Hyperband(
+    create_model,
+    objective="val_accuracy",
+    max_epochs=30,
+    hyperband_iterations=2)
+```
+Execute the Keras Tuner search by calling the `tuner.search` method, providing the training data (X_train_scaled and y_train), the number of epochs, and validation data (X_test_scaled and y_test) using the code `tuner.search(X_train_scaled,y_train,epochs=30,validation_data=(X_test_scaled,y_test))`
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/1cca43bc-b762-4aaf-b975-54395e211119)
 
 
 
