@@ -44,7 +44,7 @@ The nonprofit foundation, Alphabet Soup, sought to enhance its funding selection
 After pre-processing the data, correlation matrix and Random forest was performed to look for important features and to remove the less important features that are not adding any value to the model. Code can be found in **Random_Forest-Feature_selection.ipynb**
 
 ### More Step in Data Pre-processing:
-The column "ASK_AMT" had a 8747 unique values ranging from 5000 to 8597806340. To look for distribution/frequency of these 8747 values, `value_counts()` function was applied. the data turned out be extremely skewed, with 5000 having a unique count of 25398
+The column `ASK_AMT` had a 8747 unique values ranging from 5000 to 8597806340. To look for distribution/frequency of these 8747 values, `value_counts()` function was applied. the data turned out be extremely skewed, with 5000 having a unique count of 25398
 
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/b5b9c1c6-6350-4c7d-adca-71d3b56a2d9e)
 
@@ -60,7 +60,7 @@ The histogram represents that the data is largely skewed, to scale the `ASK_AMT`
 
 
 ### Correlation Matrix: 
-The correlation matrix was calculated for the dataset application_dummies. This matrix represents the pairwise correlations between different features. It is then visualized as a heatmap using the seaborn library. It could be concluded from the correlation matrix that two columns "STATUS" and "SPECIAL_CONSIDERATION" have almost no co-relation with any feature in the matrix. To confirm the conclusion drawn from the correlation matrix and look at the feature importance , random forest model was tested and list of important features were created.
+The correlation matrix was calculated for the dataset application_dummies. This matrix represents the pairwise correlations between different features. It is then visualized as a heatmap using the seaborn library. It could be concluded from the correlation matrix that two columns `STATUS` and `SPECIAL_CONSIDERATION` have almost no co-relation with any feature in the matrix. To confirm the conclusion drawn from the correlation matrix and look at the feature importance , random forest model was tested and list of important features were created.
 
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/0605f9c5-cfd0-4b42-9c31-90518f1f6c0d)
 
@@ -73,9 +73,12 @@ Random Forests in sklearn automatically calculates **feature importance**. All t
 
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/92e874ca-f770-4b3e-8022-e4ad0907c683)
 
-**Least Important Features:** "STATUS" and "SPECIAL_CONSIDERATION" were among the least important feature, along with that "INCOME_AMT" also showed very less importance
+**Least Important Features:** `STATUS` and `SPECIAL_CONSIDERATION` were among the least important feature, along with that `INCOME_AMT` also showed very less importance
 
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/263fb09f-56ca-4715-a679-c9ff315894cf)
+
+## Compiling, Training, And Evaluating Models:
+After indentifying the important features, the least important features( `INCOME_AMT`, `STATUS` and `SPECIAL_CONSIDERATION`) were removed from the dataset and the data was preprocessed using 
 
 
 
