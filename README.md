@@ -148,7 +148,7 @@ Retrieve the top 3 models using tuner.get_best_models(3) and evaluate each model
  - Hyperparameter tuning did not significantly improve performance.
  - Best accuracy achieved: 73.38%.
  - Even the Random Forest could predict the data with 71% accuracy.
- - Feature elimination or scaling resulted in a very minimal improvemnet in the accuracy
+ - Feature elimination or scaling resulted in a very minimal improvemnet in the accuracy.
  - 
 
 
