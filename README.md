@@ -125,7 +125,7 @@ tuner = kt.Hyperband(
     hyperband_iterations=2)
 ```
 Execute the Keras Tuner search by calling the `tuner.search` method, providing the training data (X_train_scaled and y_train), the number of epochs, and validation data (X_test_scaled and y_test) using the code `tuner.search(X_train_scaled,y_train,epochs=30,validation_data=(X_test_scaled,y_test))`
-![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/1cca43bc-b762-4aaf-b975-54395e211119)
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/1cca43bc-b762-4aaf-b975-54395e211119) 
 
 
 
