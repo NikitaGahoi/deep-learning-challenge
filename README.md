@@ -43,6 +43,19 @@ The nonprofit foundation, Alphabet Soup, sought to enhance its funding selection
 ## Analyzing Important Features:
 After pre-processing the data, correlation matrix and Random forest was performed to look for important features and to remove the less important features that are not adding any value to the model. Code can be found in **Random_Forest-Feature_selection.ipynb**
 
+### More Step in Data Pre-processing:
+The column "ASK_AMT" had a 8747 unique values ranging from 5000 to 8597806340. To look for distribution/frequency of these 8747 values, value_counts()function was applied. the data turned out be extremely skewed, with 5000 having a unique count of 25398
+
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/b5b9c1c6-6350-4c7d-adca-71d3b56a2d9e)
+
+Since the values in ASK_AMT has a very huge range, logarithmic tranformation and binning was performed. A histogram was plotted to have a visual representation of values in ASK_AMT
+
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/16a683ff-4592-4b4d-8467-7958cab96551)
+
+Log_bins were created on the log-tansformed data, and the bin were assigned to the corresponding values in the original dataframe. Given below is the value_counts for each bin:
+
+![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/6bb223ed-b099-4240-ab12-8285c2276bbc)
+
 
 ### Correlation Matrix: 
 The correlation matrix was calculated for the dataset application_dummies. This matrix represents the pairwise correlations between different features. It is then visualized as a heatmap using the seaborn library. It could be concluded from the correlation matrix that two columns "STATUS" and "SPECIAL_CONSIDERATION" have almost no co-relation with any feature in the matrix. To confirm the conclusion drawn from the correlation matrix and look at the feature importance , random forest model was tested and list of important features were created.
@@ -62,18 +75,7 @@ Random Forests in sklearn automatically calculates **feature importance**. All t
 
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/fc93affa-cda8-4e9a-bd9a-dfc6065de0cb)
 
-### More Step in Data Pre-processing:
-The column "ASK_AMT" had a 8747 unique values ranging from 5000 to 8597806340. To look for distribution/frequency of these 8747 values, value_counts()function was applied. the data turned out be extremely skewed, with 5000 having a unique count of 25398
 
-![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/b5b9c1c6-6350-4c7d-adca-71d3b56a2d9e)
-
-Since the values in ASK_AMT has a very huge range, logarithmic tranformation and binning was performed. A histogram was plotted to have a visual representation of values in ASK_AMT
-
-![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/16a683ff-4592-4b4d-8467-7958cab96551)
-
-Log_bins were created on the log-tansformed data, and the bin were assigned to the corresponding values in the original dataframe. Given below is the value_counts for each bin:
-
-![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/6bb223ed-b099-4240-ab12-8285c2276bbc)
 
 
 
