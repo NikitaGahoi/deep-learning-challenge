@@ -69,7 +69,7 @@ Application_dummies dataset was split into training and test sets and random for
 
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/25c45c83-8816-4ffe-b215-c5eb6ecae5a1)
 
-Random Forests in sklearn automatically calculates **feature importance**. All the features based on their importance was sorted and visualized (Top 20 important features).
+Random Forests in sklearn automatically calculates **feature importance**. All the features based on their importance was sorted and visualized (Top 20 important features). the bar graph below represents that the features like  `ASK_AMT`, `AFFILIATION`, `APPLICATION_TYPE`, `CLASSIFICATION`, `USE_CASE` , `ORGANIZATION` are important features 
 
 ![image](https://github.com/NikitaGahoi/deep-learning-challenge/assets/136101293/92e874ca-f770-4b3e-8022-e4ad0907c683)
 
