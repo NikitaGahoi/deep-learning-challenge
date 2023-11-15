@@ -130,13 +130,13 @@ Execute the Keras Tuner search by calling the `tuner.search` method, providing t
 
 Retrieve Top 3 Model Hyperparameters using tuner.get_best_hyperparameters(3) and print their values:
 
-{'activation': 'relu', 'first_units': 21, 'num_layers': 4, 'units_0': 16, 'units_1': 11, 'units_2': 16, 'units_3': 1, 'units_4': 16, 'units_5': 16, 
+ - **MODEL 1:** {'activation': 'relu', 'first_units': 21, 'num_layers': 4, 'units_0': 16, 'units_1': 11, 'units_2': 16, 'units_3': 1, 'units_4': 16, 'units_5': 16, 
 'tuner/epochs': 10, 'tuner/initial_epoch': 4, 'tuner/bracket': 2, 'tuner/round': 1, 'tuner/trial_id': '0144'}
 
-{'activation': 'relu', 'first_units': 21, 'num_layers': 4, 'units_0': 16, 'units_1': 11, 'units_2': 16, 'units_3': 1, 'units_4': 16, 'units_5': 16, 
+ - **MODEL 2:** {'activation': 'relu', 'first_units': 21, 'num_layers': 4, 'units_0': 16, 'units_1': 11, 'units_2': 16, 'units_3': 1, 'units_4': 16, 'units_5': 16, 
 'tuner/epochs': 30, 'tuner/initial_epoch': 10, 'tuner/bracket': 2, 'tuner/round': 2, 'tuner/trial_id': '0151'}
 
-{'activation': 'relu', 'first_units': 6, 'num_layers': 3, 'units_0': 11, 'units_1': 11, 'units_2': 16, 'units_3': 16, 'units_4': 26, 'units_5': 16, 
+ - **MODEL 3:** {'activation': 'relu', 'first_units': 6, 'num_layers': 3, 'units_0': 11, 'units_1': 11, 'units_2': 16, 'units_3': 16, 'units_4': 26, 'units_5': 16, 
 'tuner/epochs': 30, 'tuner/initial_epoch': 10, 'tuner/bracket': 1, 'tuner/round': 1, 'tuner/trial_id': '0071'}
 
 Retrieve the top 3 models using tuner.get_best_models(3) and evaluate each model against the test dataset, printing the loss and accuracy.
