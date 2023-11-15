@@ -145,12 +145,12 @@ Retrieve the top 3 models using tuner.get_best_models(3) and evaluate each model
 
 ## Conclusion
  - Despite several attempts, the target predictive accuracy of 75% was not attained.
- - Hyperparameter tuning did not significantly improve performance.
+ - Hyperparameter tuning **did not** significantly improved the performance.
  - Best accuracy achieved: 73.38%.
  - Even the Random Forest could predict the data with 71% accuracy.
- - Feature elimination or scaling resulted in a very minimal improvemnet in the accuracy.
- - 
+ - Feature elimination and log-scaling resulted in a very minimal improvemnet in the accuracy.
 
+This comprehensive report provides insights into the preprocessing steps, model attempts, and outcomes, offering a foundation for ongoing optimization and enhancement of Alphabet Soup's funding selection process.
 
 
 
