@@ -3,7 +3,12 @@
 ## Overview of the Analysis:
 The nonprofit foundation, Alphabet Soup, sought to enhance its funding selection process by developing a predictive tool. The goal was to create a binary classifier using machine learning and neural networks, predicting the success of applicants if funded by Alphabet Soup. The provided dataset contained metadata about over 34,000 organizations, including columns such as `EIN`, `NAME`, `APPLICATION_TYPE`, `AFFILIATION`, `CLASSIFICATION`, `USE_CASE`, `ORGANIZATION`, `STATUS`, `INCOME_AMT`, `SPECIAL_CONSIDERATIONS`, `ASK_AMT`, and the target variable `IS_SUCCESSFUL`.
 
-## Data Preprocessing:
+This project is broken up into three Jupyter Notebook:
+1. [Deep-learning-challenge](https://github.com/NikitaGahoi/deep-learning-challenge/blob/main/Deep-learning-challenge.ipynb): This notebook covers the data preprocessing and creating 3 neural network models using hit and trial method, and evaluating the performance of each of these model on the test dataset
+2. [Random_Forest-Feature_selection.ipynb](https://github.com/NikitaGahoi/deep-learning-challenge/blob/main/Random_Forest-Feature_selection.ipynb): This notebook contains the code to identify the important features using corelation matrix and random forest's feature selection module, thereby idetifying the least important features and removing them in further analysis to reduce the dimensionality of the dataset.
+3. [AlphabetSoup-Charity_optimization_colab](https://github.com/NikitaGahoi/deep-learning-challenge/blob/main/AlphabetSoup-Charity_optimization_colab): This notebook contains the code to perform hyper-parameter tuning using "Keras Tuner library" to find the top 3 models and evaluating their efficiency.
+
+## Data Preprocessing: 
  - **STEP 1 :** Identification columns (EIN and NAME) were removed from the input data because they are neither targets nor features
  - **STEP 2 :** Identified the number of unique values present in each columns. `APPLICATION_TYPE` and `CLASSIFICATION`, had more than 10 unique values, therefore created cutoff point of 500 and 1000 respectively to bin "rare" categorical variables together in a new value ("others")
  - **STEP 3 :** Converted categorical data to numeric with pd.get_dummies, then lastly split into training and tesing datasets
@@ -41,7 +46,7 @@ The nonprofit foundation, Alphabet Soup, sought to enhance its funding selection
 **Conclusion:** Despite multiple attempts, and increasing the nodes and layers, the target predictive accuracy of 75% was not reached. Therefore, I looked into the feature importance to reduce the dimension of the X-variable, by removing the least important features from the data. To achieve this objective, two approches were used "correlation_matrix" and "random forest model" to calculate feature importance.
 
 ## Analyzing Important Features:
-After pre-processing the data, correlation matrix and Random forest was performed to look for important features and to remove the less important features that are not adding any value to the model. Code can be found in **Random_Forest-Feature_selection.ipynb**
+After pre-processing the data, correlation matrix and Random forest was performed to look for important features and to remove the less important features that are not adding any value to the model. Code can be found in [Random_Forest-Feature_selection.ipynb](https://github.com/NikitaGahoi/deep-learning-challenge/blob/main/Random_Forest-Feature_selection.ipynb)
 
 ### More Step in Data Pre-processing:
 The column `ASK_AMT` had a 8747 unique values ranging from 5000 to 8597806340. To look for distribution/frequency of these 8747 values, `value_counts()` function was applied. the data turned out be extremely skewed, with 5000 having a unique count of 25398
@@ -80,7 +85,7 @@ Random Forests in sklearn automatically calculates **feature importance**. All t
 ## Compiling, Training, And Evaluating Models:
 After indentifying the important features, the least important features( `INCOME_AMT`, `STATUS` and `SPECIAL_CONSIDERATION`) were removed from the dataset, this reduced the dimension of dataste from 43 columns to 31 columns. Log-tranformed values were used for `ASK_AMT` feature, and the data was preprocessed as described in **Data Preprocessing** section. 
 
-To perform the hyperparameter tuning `keras-tuner` was installed. A method was created that generates a new Sequential model with hyperparameter options. This method is defined as create_model and uses Keras Tuner to allow the tuner to decide on activation functions, the number of neurons in the first layer, and the number of hidden layers with neurons. Given below are the parameters that were defined:
+To perform the hyperparameter tuning `keras-tuner` was installed. A method was created that generates a new Sequential model with hyperparameter options. This method is defined as create_model and uses Keras Tuner to allow the tuner to decide on activation functions, the number of neurons in the first layer, and the number of hidden layers with neurons. The code for the hyper-parameter tuning can be found [here](https://github.com/NikitaGahoi/deep-learning-challenge/blob/main/AlphabetSoup-Charity_optimization_colab). Given below are the parameters that were defined:
 
 ```python
 # Create a method that creates a new Sequential model with hyperparameter options
